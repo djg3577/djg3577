@@ -1,40 +1,26 @@
-import "fmt"
-
 func isValidSudoku(board [][]byte) bool {
+    rows := [9][9]bool{}
+    cols := [9][9]bool{}
+    grids := [3][3][9]bool{}
 
-    rowSet := make([]map[byte]struct{}, 9)
-    colSet := make([]map[byte]struct{}, 9)
-    squareSet := make([]map[byte]struct{}, 9)
+    for r:=0; r<9; r++{
+        for c:=0; c<9 ;c++{
+            cell := board[r][c]
 
-    for i := 0; i < 9; i++{
-        rowSet[i] = make(map[byte]struct{})
-        colSet[i] = make(map[byte]struct{})
-        squareSet[i] = make(map[byte]struct{})
-    }
-
-    for r, array := range board{
-        for c, element := range array{
-            if element == '.' {
+            if cell == '.'{
                 continue
             }
 
-            if _, found := rowSet[r][element]; found{
-                return false
-            }
-            if _, found := colSet[c][element]; found{
-                return false
-            }
-            if _, found := squareSet[(r/3)*3 + c/3][element]; found {
+            digit := int(cell) - 49
+
+            if rows[r][digit] || cols[c][digit] || grids[r/3][c/3][digit]{
                 return false
             }
 
-            rowSet[r][element] = struct{}{}
-            colSet[c][element] = struct{}{}
-            fmt.Println(r/3)
-            fmt.Println((r/3)*3)
-            squareSet[(r/3)*3 + c/3][element] = struct{}{}
+            rows[r][digit] = true
+            cols[c][digit] = true
+            grids[r/3][c/3][digit] = true
         }
     }
     return true
-
 }
