@@ -13,7 +13,9 @@ func isValidSudoku(board [][]byte) bool {
 
             digit := int(cell) - 49
 
-            if rows[r][digit] || cols[c][digit] || grids[r/3][c/3][digit]{
+            if rows[r][digit] || 
+               cols[c][digit] || 
+               grids[r/3][c/3][digit]{
                 return false
             }
 
