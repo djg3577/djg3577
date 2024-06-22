@@ -1,28 +1,35 @@
 func isValidSudoku(board [][]byte) bool {
-    hashMap := make(map[string]bool)
+    rowSet := make([]map[byte]struct{}, 9)
+    colSet := make([]map[byte]struct{}, 9)
+    squareSet := make([]map[byte]struct{}, 9)
 
-    for i :=0; i<9; i++{
-        for j:=0; j<9; j++{
-            row:=i
-            column :=j
+    // Initialize each set
+    for i := 0; i < 9; i++ {
+        rowSet[i] = make(map[byte]struct{})
+        colSet[i] = make(map[byte]struct{})
+        squareSet[i] = make(map[byte]struct{})
+    }
 
-            current_val := string(board[i][j])
-
-            if current_val == "."{
+    for r, array := range board {
+        for c, element := range array {
+            if element == '.' {
                 continue
             }
+            squareIndex := (r/3)*3 + c/3
 
-            _,ok1 := hashMap[current_val + "found row" + string(row)]
-            _, ok2 := hashMap[current_val +"found column" + string(column)]
-            _, ok3 := hashMap[current_val + "found square" + string(i/3) + "-" + string(j/3)]
-
-            if ok1 || ok2 || ok3 {
+            if _, found := rowSet[r][element]; found {
                 return false
-            } else {
-                hashMap[current_val + "found row" + string(row)] = true
-                hashMap[current_val + "found column" + string(column)] = true
-                hashMap[current_val + "found square" + string(i/3) + "-" + string(j/3)]=true
             }
+            if _, found := colSet[c][element]; found {
+                return false
+            }
+            if _, found := squareSet[squareIndex][element]; found {
+                return false
+            }
+
+            rowSet[r][element] = struct{}{}
+            colSet[c][element] = struct{}{}
+            squareSet[squareIndex][element] = struct{}{}
         }
     }
     return true
