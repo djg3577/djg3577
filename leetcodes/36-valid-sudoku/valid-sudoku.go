@@ -12,16 +12,16 @@ func isValidSudoku(board [][]byte) bool {
                 continue
             }
 
-            _,ok1 := hashMap[current_val + "found in row" + string(row)]
-            _, ok2 := hashMap[current_val +"found in column" + string(column)]
-            _, ok3 := hashMap[current_val + "found in square" + string(i/3) + "-" + string(j/3)]
+            _,ok1 := hashMap[current_val + "found row" + string(row)]
+            _, ok2 := hashMap[current_val +"found column" + string(column)]
+            _, ok3 := hashMap[current_val + "found square" + string(i/3) + "-" + string(j/3)]
 
             if ok1 || ok2 || ok3 {
                 return false
             } else {
-                hashMap[current_val + "found in row" + string(row)] = true
-                hashMap[current_val + "found in column" + string(column)] = true
-                hashMap[current_val + "found in square" + string(i/3) + "-" + string(j/3)]=true
+                hashMap[current_val + "found row" + string(row)] = true
+                hashMap[current_val + "found column" + string(column)] = true
+                hashMap[current_val + "found square" + string(i/3) + "-" + string(j/3)]=true
             }
         }
     }
