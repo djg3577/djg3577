@@ -22,4 +22,4 @@
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=djg3577&" alt="djg3577" /></p>
 
-![Snake animation](https://raw.githubusercontent.com/djg3577/djg3577/output/github-contribution-grid-snake-dark.svg)
+![Snake animation](https://raw.githubusercontent.com/djg3577/djg3577/output/github-contribution-grid-snake-light.svg)
