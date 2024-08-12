@@ -20,6 +20,5 @@
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=djg3577&show_icons=true&locale=en" alt="djg3577" /></p>
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=djg3577&" alt="djg3577" /></p>
 
 ![Snake animation](https://raw.githubusercontent.com/djg3577/djg3577/output/github-contribution-grid-snake.svg)
