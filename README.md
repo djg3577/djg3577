@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Daniel Guillen</h1>
 <h3 align="center">A passionate full stack developer from USA</h3>
 
-- 🔭 I’m currently working on [Web scraper project](https://github.com/djg3577/skool-backend)
+- 🔭 I’m currently working on [Web Developer Habit Tracker](https://github.com/djg3577/STRIVEBackend)
 
 - 🌱 I’m currently learning **Gin/Gin-Gonic**
 
